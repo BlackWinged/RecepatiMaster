@@ -18,6 +18,11 @@ services:
     ports:
       - "8081:80"
       - "8082:443"
+    environment:
+      - "DB_LOCATION=localhost"
+      - "DB_USERNAME=sa!"
+      - "DB_PASSWORD=SuperStronkPassword!"
+      - "ASPNETCORE_URLS=http://+:8081"
     networks:
       receptnetwork:
         aliases:
