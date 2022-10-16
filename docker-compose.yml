@@ -20,7 +20,7 @@ services:
       - "8082:443"
     environment:
       - "DB_LOCATION=localhost"
-      - "DB_USERNAME=sa!"
+      - "DB_USERNAME=sa"
       - "DB_PASSWORD=SuperStronkPassword!"
     networks:
       receptnetwork:
