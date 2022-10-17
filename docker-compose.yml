@@ -14,18 +14,27 @@ services:
           - sqlserver
 
   api:
-    image: "recepati:latest"
+    image: "blackwinged/recepati:latest"
     ports:
       - "8081:80"
       - "8082:443"
     environment:
-      - "DB_LOCATION=localhost"
+      - "DB_LOCATION=sqlserver"
       - "DB_USERNAME=sa"
       - "DB_PASSWORD=SuperStronkPassword!"
     networks:
       receptnetwork:
         aliases:
           - apiserver
+  
+  front:
+    image: "blackwinged/recepati_front:latest"
+    ports:
+      - "8080:8080"
+    networks:
+      receptnetwork:
+        aliases:
+          - frontend
 networks:
   receptnetwork: {}
 
