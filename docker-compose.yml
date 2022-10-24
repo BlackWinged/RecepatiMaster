@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.3'
 
 services:
   sql:
@@ -8,6 +8,10 @@ services:
       - "SA_PASSWORD=SuperStronkPassword!"
     ports:
       - "1433:1433"
+    volumes:
+      - /home/sql/data:/var/opt/mssql/data
+      - /home/sql/log:/var/opt/mssql/log
+      - /home/sql/secrets:/var/opt/mssql/secrets
     networks:
       receptnetwork:
           aliases: 
