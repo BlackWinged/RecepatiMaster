@@ -30,7 +30,7 @@ services:
   front:
     image: "blackwinged/recepati_front:latest"
     ports:
-      - "8080:8080"
+      - "8080:80"
     networks:
       receptnetwork:
         aliases:
